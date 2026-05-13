@@ -1,0 +1,10 @@
+{
+  "updated": "2026-05-13",
+  "signals": [
+    {"name":"Agent orchestration","status":"accelerating","score":92},
+    {"name":"MCP governance","status":"rising risk","score":86},
+    {"name":"Browser agents","status":"emerging","score":78},
+    {"name":"Prompt-only workflows","status":"declining","score":42},
+    {"name":"Execution-transparent UI","status":"rising","score":83}
+  ]
+}
