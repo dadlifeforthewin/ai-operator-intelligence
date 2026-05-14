@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Builder Brief — May 14, 2026</title>
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="brief-header">
+    <nav class="nav">
+      <a class="back-link" href="../index.html">← Dashboard Home</a>
+      <div class="nav-actions"><a class="ghost-btn" href="#operator-playbook">Playbook</a></div>
+    </nav>
+    <section class="brief-hero">
+      <div class="eyebrow">Daily Brief · May 14, 2026</div>
+      <h1>Agent operations are shifting from local tools to managed infrastructure.</h1>
+      <p>Combined update from this morning plus new signals: Codex mobile access, Microsoft moving away from Claude Code licenses, enterprise freebie wars, MCP/CLI security, and the continued move from prompt craft to runtime control.</p>
+      <div class="brief-meta">
+        <span>Signal: Very High</span>
+        <span>Risk: High</span>
+        <span>Builder Opportunity: Strong</span>
+      </div>
+    </section>
+  </header>
+
+  <main class="brief-main">
+    <aside class="brief-sidebar">
+      <a href="#executive">Executive Signal</a>
+      <a href="#ai-coding">AI Coding</a>
+      <a href="#cli">CLI & Agents</a>
+      <a href="#automation">Automation & MCP</a>
+      <a href="#security">Security</a>
+      <a href="#ux">UX Trends</a>
+      <a href="#operator-playbook">Operator Playbook</a>
+    </aside>
+
+    <article class="brief-content">
+      <section class="brief-section" id="executive">
+        <span class="chip blue">Executive Signal</span>
+        <h2>The market is moving from AI coding tools to AI coding operations.</h2>
+        <p>The new pattern is clear: coding agents are becoming managed infrastructure. OpenAI is pushing Codex deeper into ChatGPT and mobile workflows; Anthropic is adjusting Claude Code economics and usage limits; Microsoft is consolidating internal workflows around GitHub Copilot CLI instead of continuing broad Claude Code licensing.</p>
+        <p>The practical question is no longer only “which model writes better code?” It is: <strong>which stack gives you reliable supervision, permissions, context efficiency, cost control, and rollback?</strong></p>
+        <div class="insight-grid">
+          <div><strong>Top signal:</strong><span>Codex access is moving onto mobile, making agent supervision portable.</span></div>
+          <div><strong>Enterprise signal:</strong><span>Microsoft is reducing Claude Code licenses and steering teams toward Copilot CLI.</span></div>
+          <div><strong>Economic signal:</strong><span>Unlimited agent usage is becoming unsustainable under automated workloads.</span></div>
+        </div>
+        <p>Sources: <a href="https://www.reuters.com/business/media-telecom/openai-brings-codex-coding-tool-chatgpt-mobile-app-2026-05-14/" target="_blank">Reuters on Codex mobile</a>, <a href="https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad" target="_blank">The Verge on Microsoft and Claude Code</a>, <a href="https://www.axios.com/2026/05/14/anthropic-claude-price-openai-tokens" target="_blank">Axios on Claude limits and Codex incentives</a>.</p>
+      </section>
+
+      <section class="brief-section" id="ai-coding">
+        <span class="chip purple">AI Coding</span>
+        <h2>Codex mobile changes the shape of coding-agent supervision.</h2>
+        <p>OpenAI’s Codex is now available in the ChatGPT mobile app. The important part is not that people will code full features on their phones. The important part is that they can supervise running agents remotely: review outputs, authorize changes, switch models, inspect progress, and start new tasks away from the desk.</p>
+        <p>This supports the broader thesis from this morning: the future interface for coding agents is a control plane, not just an editor. Mobile access turns the phone into an approval and monitoring surface.</p>
+        <div class="warning-box"><strong>Operator read:</strong> mobile supervision is useful for approvals and status checks, but code quality still depends on local validation, tests, diffs, and repo-specific instructions. Do not let “approve from phone” become “merge without review.”</div>
+        <p>Sources: <a href="https://www.reuters.com/business/media-telecom/openai-brings-codex-coding-tool-chatgpt-mobile-app-2026-05-14/" target="_blank">Reuters</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/930763/openai-codex-chatgpt-ios-android-app-preview" target="_blank">The Verge</a>.</p>
+      </section>
+
+      <section class="brief-section" id="cli">
+        <span class="chip green">CLI & Agent Workflows</span>
+        <h2>Enterprise teams are standardizing around controlled CLI surfaces.</h2>
+        <p>Microsoft reportedly began canceling Claude Code licenses and pushing teams toward GitHub Copilot CLI. The key lesson is not that Claude Code is weak. The lesson is that large organizations want agent workflows inside their own governance, security, procurement, telemetry, and developer-platform stack.</p>
+        <p>This reinforces the CLI/control-plane direction: enterprises will prefer agent systems that fit their existing policy surface. That means auditability, central permissions, predictable billing, and integration with internal developer workflows.</p>
+        <div class="insight-grid">
+          <div><strong>For builders:</strong><span>design agent workflows around existing repo, CI, branch, and deployment controls.</span></div>
+          <div><strong>For tool choice:</strong><span>the winning tool may be the one your stack can govern, not the one with the flashiest demo.</span></div>
+          <div><strong>For A2D/internal work:</strong><span>keep workflows portable: document shell commands, repo conventions, and test gates.</span></div>
+        </div>
+        <p>Source: <a href="https://www.theverge.com/tech/930447/microsoft-claude-code-discontinued-notepad" target="_blank">The Verge</a>.</p>
+      </section>
+
+      <section class="brief-section" id="automation">
+        <span class="chip blue">Automation & MCP</span>
+        <h2>The best MCP pattern is selective context, not tool dumping.</h2>
+        <p>This morning’s MCP thesis still holds: MCP is powerful, but dumping every tool schema and every intermediate result into model context is wasteful and risky. The better pattern is progressive disclosure: tool search, small result summaries, code-mode execution, and sandboxed processing.</p>
+        <table class="intel-table">
+          <tr><th>Layer</th><th>Best Practice</th></tr>
+          <tr><td>MCP discovery</td><td>Expose searchable tool indexes, not every schema by default.</td></tr>
+          <tr><td>Execution</td><td>Prefer scripts, CLIs, or sandbox code for large data processing.</td></tr>
+          <tr><td>Automation</td><td>Require human review before workflows email, deploy, delete, bill, or mutate production data.</td></tr>
+        </table>
+        <p>Operator action: build your AI Operator Intelligence pipeline the same way. The daily generator should collect sources, produce structured JSON/Markdown, render the dashboard, then publish. Do not hand-edit HTML daily.</p>
+      </section>
+
+      <section class="brief-section" id="security">
+        <span class="chip orange">Security & Infrastructure</span>
+        <h2>Agent permission systems are still immature.</h2>
+        <p>The key security issue is permission boundaries. Recent research on Claude Code auto mode reports much higher false-negative rates under deliberately ambiguous DevOps scenarios than production figures suggest, especially where dangerous changes happen through file edits rather than shell commands.</p>
+        <p>The takeaway is direct: do not assume a permission prompt catches all risky actions. Agents can mutate state through files, configs, generated workflows, credentials, and browser sessions.</p>
+        <div class="risk-list">
+          <div><strong>Safer default:</strong> read-only agents for exploration and planning.</div>
+          <div><strong>Mutation gate:</strong> explicit workflow approval before writes, deploys, deletes, or external sends.</div>
+          <div><strong>Audit layer:</strong> log tool calls, diffs, shell commands, generated files, and workflow changes.</div>
+        </div>
+        <p>Source: <a href="https://arxiv.org/abs/2604.04978" target="_blank">Claude Code auto-mode evaluation</a>.</p>
+      </section>
+
+      <section class="brief-section" id="ux">
+        <span class="chip green">Web Design & UX Trends</span>
+        <h2>The dashboard should be the product. Email should be the notification layer.</h2>
+        <p>The recent email experiments confirmed the constraint: Apple/iCloud Mail strips or flattens too much of the dashboard experience. The right architecture is exactly this GitHub Pages dashboard: rich reading experience on the web, simple email summary as a link/notification.</p>
+        <p>Design direction for this dashboard: executive intelligence, dark premium UI, signal cards, archive history, search/filter, trend tracking, source cards, and operator action items. The goal is not a generic AI newsletter. The goal is a personal operator-intelligence system.</p>
+      </section>
+
+      <section class="brief-section" id="operator-playbook">
+        <span class="chip purple">Operator Playbook</span>
+        <h2>What to do next</h2>
+        <ol class="big-list">
+          <li>Run today’s new GitHub Action after adding <code>OPENAI_API_KEY</code> to repo secrets.</li>
+          <li>Keep the email simple: 5-minute summary plus one link to this full dashboard.</li>
+          <li>Move the generator toward structured source data: JSON for stories, tags, trend scores, and source links.</li>
+          <li>Add archive auto-listing so older editions remain browsable without manual homepage edits.</li>
+          <li>Add weekly trend rollups: coding agents, MCP governance, browser agents, security, and UX patterns.</li>
+          <li>Compare Codex and Claude Code in your own repo using the same task, same tests, and same review rubric.</li>
+          <li>For any agent workflow, separate read, write, deploy, delete, and external-send permissions.</li>
+        </ol>
+      </section>
+    </article>
+  </main>
+  <footer><p>AI Operator Intelligence · Static dashboard for GitHub Pages</p></footer>
+</body>
+</html>
